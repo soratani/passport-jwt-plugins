@@ -1,0 +1,45 @@
+{
+  "name": "passport-jwt-plugins",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "rm -rf lib && tsc -p tsconfig.json",
+    "changeset": "changeset",
+    "version": "changeset version && pnpm install"
+  },
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "bin": {
+    "sam": "./bin/bin"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soratani/passport-jwt-plugins.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soratani/passport-jwt-plugins/issues"
+  },
+  "homepage": "https://github.com/soratani/passport-jwt-plugins#readme",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "chai-passport-strategy": "^1.0.0",
+    "mocha": "^9.2.1",
+    "nyc": "^15.1.0",
+    "sinon": "^1.0.0"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.0",
+    "passport-strategy": "^1.0.0"
+  }
+}
