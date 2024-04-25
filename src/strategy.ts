@@ -1,5 +1,6 @@
 import passport from "passport-strategy";
 import util from "util";
+import JwtVerifier from "./verify_jwt";
 import assign from "./helpers/assign";
 
 function JwtStrategy(options, verify) {
@@ -46,8 +47,6 @@ function JwtStrategy(options, verify) {
 }
 util.inherits(JwtStrategy, passport.Strategy);
 
-JwtStrategy.JwtVerifier = require("./verify_jwt");
-
 JwtStrategy.prototype.authenticate = function (req, options) {
   var self = this;
 
@@ -83,7 +82,7 @@ JwtStrategy.prototype.authenticate = function (req, options) {
         self.fail(secretOrKeyError);
       } else {
         // Verify the JWT
-        JwtStrategy.JwtVerifier(
+        (JwtStrategy as any).JwtVerifier(
           token,
           secretOrKey,
           self._verifOpts,
