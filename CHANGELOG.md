@@ -1,5 +1,11 @@
 # passport-jwt-plugins
 
+## 1.0.3
+
+### Patch Changes
+
+- b1ae575: 1.0.3
+
 ## 1.0.2
 
 ### Patch Changes
