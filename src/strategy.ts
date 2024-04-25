@@ -45,6 +45,7 @@ function JwtStrategy(options, verify) {
     ignoreExpiration: !!options.ignoreExpiration,
   });
 }
+JwtStrategy.JwtVerifier = JwtVerifier;
 util.inherits(JwtStrategy, passport.Strategy);
 
 JwtStrategy.prototype.authenticate = function (req, options) {
@@ -82,7 +83,7 @@ JwtStrategy.prototype.authenticate = function (req, options) {
         self.fail(secretOrKeyError);
       } else {
         // Verify the JWT
-        (JwtStrategy as any).JwtVerifier(
+        JwtVerifier(
           token,
           secretOrKey,
           self._verifOpts,
