@@ -9,16 +9,12 @@
   },
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
-  "bin": {
-    "sam": "./bin/bin"
-  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
   "files": [
-    "lib",
-    "bin"
+    "lib"
   ],
   "repository": {
     "type": "git",
@@ -32,11 +28,14 @@
   },
   "homepage": "https://github.com/soratani/passport-jwt-plugins#readme",
   "devDependencies": {
+    "@changesets/cli": "^2.26.1",
+    "@types/node": "^20.12.7",
     "chai": "^3.0.0",
     "chai-passport-strategy": "^1.0.0",
     "mocha": "^9.2.1",
     "nyc": "^15.1.0",
-    "sinon": "^1.0.0"
+    "sinon": "^1.0.0",
+    "typescript": "^5.4.5"
   },
   "dependencies": {
     "jsonwebtoken": "^9.0.0",
