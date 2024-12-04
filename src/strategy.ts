@@ -88,10 +88,7 @@ JwtStrategy.prototype.authenticate = function (req, options) {
           secretOrKey,
           self._verifOpts,
           function (jwt_err, payload) {
-            if (jwt_err) {
-              return self.fail(jwt_err);
-            } else {
-              // Pass the parsed token to the user
+              const data = jwt_err ? null : payload;
               var verified = function (err, user, info) {
                 if (err) {
                   return self.error(err);
@@ -104,14 +101,13 @@ JwtStrategy.prototype.authenticate = function (req, options) {
 
               try {
                 if (self._passReqToCallback) {
-                  self._verify(req, payload, verified);
+                  self._verify(req, data, verified);
                 } else {
-                  self._verify(payload, verified);
+                  self._verify(data, verified);
                 }
               } catch (ex) {
                 self.error(ex);
               }
-            }
           }
         );
       }

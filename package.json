@@ -1,5 +1,5 @@
 {
-  "name": "passport-jwt-plugins",
+  "name": "@soratani-code/passport-jwt-plugins",
   "version": "1.0.3",
   "description": "",
   "scripts": {
